@@ -22,30 +22,6 @@
 &mt { quick_tap_ms = <219>; };
 
 / {
-    behaviors {
-        tdF: tap_dance_lang1 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <100>;
-            bindings = <&kp F>, <&kp LG(F11)>;
-        };
-        tdJ: tap_dance_lang2 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <100>;
-            bindings = <&kp J>, <&kp LG(F12)>;
-        };
-        lh_pht: left_positional_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
-            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-            quick-tap-ms = <200>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <0 1 2 3 4 5>;    // <---[[right-hand keys]]
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
 
@@ -174,15 +150,15 @@
 
                 default_layer {
                         bindings = <
-            // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-                  &kp ESC       &kp Q         &kp W         &kp E        &kp R         &kp T              &kp Y         &kp U         &kp I         &kp O         &kp P         &lt FLR LEFT_BRACKET
-            // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                  &kp TAB       &kp A         &kp S         &kp D        &tdF          &kp G              &kp H         &tdJ          &kp K         &kp L         &kp SEMI      &kp SQT
-            // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                  &kp LSHFT     &kp Z         &kp X         &kp C        &kp V         &kp B              &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &mt RALT RIGHT_BRACKET
-            // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                                            &kp LCTRL     &mo 1        &mt LGUI RET     &lt RSE SPACE   &kp BSPC     &kp CAPSLOCK
-            //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
+            // ╭────────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+                  &kp ESC          &kp Q         &kp W         &kp E           &kp R        &kp T              &kp Y         &kp U           &kp I         &kp O         &kp P         &lt FLR LEFT_BRACKET
+            // ├────────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+                  &mt LALT TAB     &kp A         &kp S         &kp D           &kp F        &kp G              &kp H         &kp J          &kp K         &kp L         &kp SEMI      &kp SQT
+            // ├────────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+                  &kp LSHFT        &kp Z         &kp X         &kp C           &kp V        &kp B              &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &mt RALT RIGHT_BRACKET
+            // ╰────────────────┴─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
+                                                               &kp LCTRL       &mo 1      &mt LGUI RET     &lt RSE SPACE   &kp BSPC     &mt LGUI CAPSLOCK
+            //                                              ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
                 lower_layer {
@@ -192,22 +168,22 @@
             // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                   &kp GRAVE      &kp EXCL       &kp AT       &kp HASH      &kp DLLR     &kp PRCNT         &kp CARET     &kp AMPS      &kp ASTRK      &kp LPAR      &kp RPAR      &kp F18
             // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                  &kp LSHFT      &trans         &trans        &trans      &kp LG(F11)   &kp LG(F12)         &trans       &trans         &trans        &trans        &trans       &kp F14
+                  &kp LSHFT      &trans         &trans        &trans        &trans       &trans            &trans         &trans       &trans        &trans        &trans       &kp F14
             // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                                             &mo ADJ        &trans       &kp LGUI         &kp KP_N1     &kp KP_N2     &kp KP_N3
+                                                             &mo ADJ        &trans       &kp LGUI         &kp SPACE       &trans       &kp DEL
             //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
                 raise_layer {
                         bindings = <
             // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-                   &trans         &trans     &kp PG_UP      &kp UP        &kp PG_DN     &kp HOME          &kp CARET     &kp PG_UP     &kp UP        &kp PG_DN     &kp HOME     &kp F17
+                   &trans        &trans       &trans         &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans        &trans
             // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                   &trans         &trans     &kp LEFT       &kp DOWN      &kp RIGHT     &kp END           &kp MINUS     &kp LEFT      &kp DOWN      &kp RIGHT     &kp END      &kp F18
+                   &kp TAB       &trans       &kp HOME      &kp MINUS      &kp PLUS     &kp END           &kp LEFT      &kp DOWN       &kp UP       &kp RIGHT      &trans       &trans
             // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                 &out OUT_TOG     &trans     &trans         &trans        &trans        &kp F15           &kp F16       &kp F23       &trans        &trans        &trans       &out OUT_TOG
+                   &trans         &trans       &trans        &trans        &trans        &trans            &trans       &kp PG_DN     &kp PG_UP      &trans         &trans        &trans
             // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                                              &trans     &kp LG(F11)   &kp LG(F12)            &trans        &trans        &trans
+                                                              &trans     &kp LG(F11)    &kp LGUI           &trans        &trans        &trans
             //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >; 
                 };

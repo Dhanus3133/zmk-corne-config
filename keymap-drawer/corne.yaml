@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: corne}
 layers:
   default:
-  - ESC
+  - Esc
   - Q
   - W
   - E
@@ -13,7 +13,7 @@ layers:
   - O
   - P
   - {t: '[', h: fbuttons}
-  - {t: TAB, h: LALT}
+  - {t: ↹, h: Alt}
   - A
   - S
   - D
@@ -25,7 +25,7 @@ layers:
   - L
   - ;
   - ''''
-  - LSHFT
+  - Shift
   - Z
   - X
   - C
@@ -36,13 +36,13 @@ layers:
   - ','
   - .
   - /
-  - {t: ']', h: RALT}
-  - LCTRL
+  - {t: ']', h: Alt}
+  - Ctrl
   - lower
-  - {t: RET, h: LGUI}
-  - {t: SPACE, h: raise}
-  - BSPC
-  - {t: CAPSLOCK, h: LGUI}
+  - {t: ⏎, h: Gui}
+  - {t: ␣, h: raise}
+  - ⌫
+  - {t: CAPSLOCK, h: Gui}
   lower:
   - '~'
   - '1'
@@ -68,7 +68,7 @@ layers:
   - (
   - )
   - F18
-  - LSHFT
+  - Shift
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -82,50 +82,50 @@ layers:
   - F14
   - adjust
   - {type: held}
-  - LGUI
-  - SPACE
+  - Gui
+  - ␣
   - {t: ▽, type: trans}
-  - DEL
+  - ⌦
   raise:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mmv MOVE_UP'
+  - Mouse ↑
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - PG UP
-  - '&msc SCRL_LEFT'
-  - '&msc SCRL_DOWN'
-  - '&msc SCRL_UP'
-  - '&msc SCRL_RIGHT'
+  - Page ↑
+  - Scroll ←
+  - Scroll ↓
+  - Scroll ↑
+  - Scroll →
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - TAB
-  - '&mmv MOVE_LEFT'
-  - '&mmv MOVE_DOWN'
-  - '&mmv MOVE_RIGHT'
+  - ↹
+  - Mouse ←
+  - Mouse ↓
+  - Mouse →
   - {t: ▽, type: trans}
-  - PG DN
-  - LEFT
-  - DOWN
-  - UP
-  - RIGHT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Page ↓
+  - ←
+  - ↓
+  - ↑
+  - →
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - HOME
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Home
   - '-'
   - +
-  - END
+  - End
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp RCLK'
-  - '&mkp LCLK'
-  - LGUI
+  - Right Click
+  - Left Click
+  - Gui
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -138,9 +138,9 @@ layers:
   - F6
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LALT
-  - LSHFT
-  - LCTRL
+  - Alt
+  - Shift
+  - Ctrl
   - {type: held}
   - F7
   - F8
@@ -173,8 +173,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   adjust:
-  - '&bootloader'
-  - '&sys_reset'
+  - Boot
+  - Reset
   - OUT TOG
   - ''
   - ''
@@ -183,19 +183,19 @@ layers:
   - ''
   - ''
   - OUT TOG
-  - '&sys_reset'
-  - '&bootloader'
+  - Reset
+  - Boot
   - BT CLR
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
-  - {t: BT, h: '4'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '0'}
+  - BT 1
+  - BT 2
+  - BT 3
+  - BT 4
+  - BT 5
+  - BT 5
+  - BT 4
+  - BT 3
+  - BT 2
+  - BT 1
   - BT CLR
   - ''
   - KP NUM
@@ -245,6 +245,6 @@ combos:
 - p: [8, 9]
   k: '|'
 - p: [0, 4]
-  k: '&bootloader'
+  k: Boot
 - p: [7, 11]
-  k: '&bootloader'
+  k: Boot

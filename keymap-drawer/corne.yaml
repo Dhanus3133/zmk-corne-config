@@ -55,7 +55,7 @@ layers:
   - '8'
   - '9'
   - '0'
-  - F17
+  - {t: ▽, type: trans}
   - '`'
   - '!'
   - '@'
@@ -65,21 +65,21 @@ layers:
   - ^
   - '&'
   - '*'
+  - '='
+  - _
+  - {t: ▽, type: trans}
+  - Shift
+  - '-'
+  - +
+  - '{'
+  - '['
   - (
   - )
-  - F18
-  - Shift
+  - ']'
+  - '}'
+  - '|'
+  - \
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - F14
   - adjust
   - {type: held}
   - Gui
